@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang='fr'>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style2.css')}}">
+    <title>VideoPoker</title>
+</head>
+
+<body>
+    <h1>Game</h1>
+    <div class="playground">
+        <p>{{ session['mise'] }}€</p>
+    </div>
+
+    <div class="card-playground">
+     
+        {% for carte in session['premier_tirage'] %}
+        <input class="label" type="checkbox" class="form-check-input" id="{{ card }}" name="{{ loop.index0 }}" />
+        <img class="card-img" src="{{ url_for('static',filename='cards/'+carte+'.png') }}" alt="card-back-video-poker" onclick= "clickOnCardForRevers(this)"/>
+        <label class="form-check-label" for="{{ card }}"></label>
+        {% endfor %}
+        
+    <div class="money">
+        {% for g in session['gain'] %}
+        
+        {% endfor %}
+
+
+
+
+
+    </div>
+
+        
+
+</body>
+<script src ="{{ url_for('static', filename = 'script.js') }}"></script>
+</html>

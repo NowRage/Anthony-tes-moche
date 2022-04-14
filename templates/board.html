@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang='fr'>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style2.css')}}">
+    <title>VideoPoker</title>
+</head>
+
+<body>
+    <h1>Bienvenue au Casino IPSSI</h1>
+    <div class="header-playground">
+        <p>{{ session['wallet'] }}€</p>
+    </div>
+
+    <div class="card-playground">
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="card-back-video-poker"/>
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="card-back-video-poker"/>
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="card-back-video-poker"/>
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="card-back-video-poker"/>
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="card-back-video-poker"/>
+    </div>
+
+    <form method="POST">
+        <input name="mise" type="number" min="1" placeholder="Veuillez entrer votre mise !">
+        <input type="submit" value="Play">
+    </form>
+</body>
+
+</html>

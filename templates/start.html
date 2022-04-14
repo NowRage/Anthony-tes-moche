@@ -1,0 +1,20 @@
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="styleheet" type ="text/css" href="{{url_for('static',filename='style.css') }}">
+        <tilte>VideoPoker</tilte>
+    </head>
+    <body>
+        <h1>Bienvenue sur notre jeux video ! :) </h1>
+        <div>
+            {% if session['error-form']%}
+                <div class="message-error">{{session["error-form"]}}</div>
+                {% endif %}
+                <form method="post">
+                    <input name="wallet" type="number" value="0" placeholder="Entrer vos montant" required>
+                    <input name="age" type="number" value="0" min="12" max="120" placeholder="Entrer votre age" required>
+                    <input type="submit" value="Valider">
+                </form>
+        </div>
+    </body>
+</html>
